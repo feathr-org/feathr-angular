@@ -1,0 +1,125 @@
+$file-drop-border-width: 15px;
+$intro-item-padding: 5em;
+
+.home-inner-container {
+  margin: 0 10em;
+}
+
+.home-nav {
+  max-height: 10em;
+  justify-content: space-between;
+
+  & .left {
+    max-height: 100%;
+    display: flex;
+
+    img {
+      margin: 1em 0;
+      object-fit: contain;
+    }
+  }
+
+  & .right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & > p {
+      margin-right: 2em;
+    }
+  }
+}
+
+.home-content {
+  flex-grow: 1;
+  padding-bottom: 10em;
+}
+
+.intro-container {
+  & > div {
+    width: 50%;
+  }
+
+  & .left {
+    text-align: center;
+    padding: 0 $intro-item-padding;
+
+    & p {
+      font-weight: 600;
+      line-height: 1.6rem;
+    }
+  }
+
+  & .right {
+    padding: 0 $intro-item-padding;
+  }
+}
+
+#tech-container {
+  height: 5em;
+  margin-top: 3em;
+
+  & div {
+    width: 1em;
+  }
+
+  & a {
+    height: 5em;
+  }
+
+  & img {
+    width: 5em;
+    height: 5em;
+    object-fit: contain;
+  }
+}
+
+#file-drop-box-container {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transition-duration: 0.2s;
+
+  & div {
+    border: #FEFEFE;
+    border-radius: $file-drop-border-width;
+    border-width: $file-drop-border-width;
+    border-style: dashed;
+    height: calc(100% - 2 * $file-drop-border-width);
+    width: 100%;
+
+    // Arrow
+    & > strong {
+      position: absolute;
+      text-align: center;
+      font-size: 4rem;
+      margin-bottom: 1em;
+      transform: rotate(90deg);
+      transition-duration: 0.5s;
+    }
+
+    // Text
+    & > p {
+      font-size: 1.1rem;
+      font-weight: 900;
+      margin-top: 4em;
+    }
+  }
+}
+
+#file-drop-box-container:hover {
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: rgba(18, 18, 18, 0.25) 0px 54px 55px, rgba(18, 18, 18, 0.12) 0px -12px 30px, rgba(18, 18, 18, 0.12) 0px 4px 6px, rgba(18, 18, 18, 0.17) 0px 12px 13px, rgba(18, 18, 18, 0.09) 0px -3px 5px;
+
+  & div {
+    // Arrow
+    & > strong {
+      margin-bottom: 0.5em;
+    }
+  }
+}
