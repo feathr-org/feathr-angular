@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { HealthComponent } from './components/health/health.component';
 
 import { IPFSService } from './services/ipfs/ipfs.service';
 import { OrbitDBService } from './services/orbitdb/orbit-db.service';
@@ -15,8 +14,7 @@ import { OrbitDBService } from './services/orbitdb/orbit-db.service';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    HealthComponent
+    HomeComponent
   ],
   imports: [
     RouterModule,
