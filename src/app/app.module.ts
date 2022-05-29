@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 
 import { IPFSService } from './services/ipfs/ipfs.service';
 import { OrbitDBService } from './services/orbitdb/orbit-db.service';
+import { FileLinkService } from './services/file-link/file-link.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OrbitDBService } from './services/orbitdb/orbit-db.service';
   ],
   providers: [
     IPFSService,
-    OrbitDBService
+    OrbitDBService,
+    FileLinkService
   ],
   bootstrap: [AppComponent]
 })
