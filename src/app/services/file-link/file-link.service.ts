@@ -1,10 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, isDevMode } from '@angular/core';
-import { BehaviorSubject, } from 'rxjs';
 import { FileLink } from 'src/app/models/file-link.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FileLinkService {
   baseUrl?: string;
@@ -17,28 +16,34 @@ export class FileLinkService {
     }
   }
 
-  getFileLink(id: string, callback: (result: FileLink) => void) {
-    this.httpClient.get<FileLink>(this.baseUrl + 'filelink/' + id).subscribe(
-      (result) => {
-        callback(result);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+  async getFileLink(id: string): Promise<FileLink> {
+    return new Promise((resolve, reject) => {
+      this.httpClient.get<FileLink>(this.baseUrl + 'filelink/' + id).subscribe(
+        (result) => {
+          resolve(result);
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    });
   }
 
-  createFileLink(uri: string, callback: (result: FileLink) => void) {
+  async createFileLink(uri: string): Promise<FileLink> {
     let httpParams = new HttpParams();
     httpParams = httpParams.append('uri', uri);
 
-    this.httpClient.post<FileLink>(this.baseUrl + 'filelink', null, { params: httpParams }).subscribe(
-      (result) => {
-        callback(result);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    return new Promise((resolve, reject) => {
+      this.httpClient
+        .post<FileLink>(this.baseUrl + 'filelink', null, { params: httpParams })
+        .subscribe(
+          (result) => {
+            resolve(result);
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+    });
   }
 }

@@ -7,15 +7,19 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { FileComponent } from './components/file/file.component';
 
 import { IPFSService } from './services/ipfs/ipfs.service';
 import { OrbitDBService } from './services/orbitdb/orbit-db.service';
 import { FileLinkService } from './services/file-link/file-link.service';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    FileComponent,
+    NavComponent
   ],
   imports: [
     RouterModule,

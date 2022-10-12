@@ -1,27 +1,20 @@
-<div class="core-container gradient-container">
-  <div class="home-inner-container flex-column full-height">
-    <div class="home-nav flex-row full-width">
-      <div class="left">
-        <img src="../assets/img/feathr.png">
-      </div>
-      <div class="right">
-        <a [routerLink]="['/about']"><p>About</p></a>
-        <a href="https://github.com/feathr-org" target="_blank"><p>Github</p></a>
-        <a [routerLink]="['/dashboard']"><div class="button-1"><p>Dashboard</p></div></a>
-      </div>
-    </div>
+<nav-component></nav-component>
+<div class="core-container">
+  <div class="core-container-inner">
     <div class="home-content flex-column justify-center">
-      <div class="intro-container flex-row">
+      <div class="intro-container flex-row align-items">
         <div class="left">
           <h1>Send Stuff P2P</h1>
-          <p>Stop using Dropbox and Google Drive to send files. No central server means faster speed, better security and no file size limitations.</p>
+          <p>Stop using Dropbox and Google Drive to send files. No central server means faster speed, better security
+            and no file size limitations.</p>
           <div id="tech-container" class="flex-row justify-center align-items-center full-width">
             <p>Powered By</p>
             <div></div>
             <a href="https://ipfs.io/" target="_blank"><img src="../assets/img/ipfs-logo.png"></a>
           </div>
         </div>
-        <div class="right" (drop)="onDrop($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (click)="openFileSelector()">
+        <div class="right" (drop)="onDrop($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)"
+          (click)="openFileSelector()">
           <div id="file-drop-box-container">
             <div class="flex-column justify-center align-items-center">
               <strong>&#x279C;</strong>

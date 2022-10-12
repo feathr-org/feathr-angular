@@ -1,3 +1,5 @@
+@use './variables';
+
 /* Defaults */
 body {
   background: #333;
@@ -34,17 +36,29 @@ a {
 }
 
 // Core Containers
-
 .core-container {
   width: 100%;
   height: 100%;
+  position: absolute;
 }
 
-.gradient-container {
+.core-container-inner {
+  margin: variables.$nav-height variables.$page-side-margin 0 variables.$page-side-margin;
+}
+
+body {
   background-image: linear-gradient(to right top, #22222c, #242331, #272436, #2a253b, #2d2640, #2e2742, #302844, #312946, #302a46, #2f2c45, #2e2d45, #2e2e44);
 }
 
 // General Styles
+
+.core-sidebar {
+  width: 3em;
+}
+
+.core-main-content {
+  flex-grow: 1;
+}
 
 .img-fit {
   object-fit: contain;

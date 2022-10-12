@@ -48,6 +48,9 @@ export class IPFSService {
         },
       }
     };
+
+    // TODO: Check for connection
+    // via try/catch? There might be explicit functionality
     this._createIPFSNodePromise = create(ipfsOptions);
   }
 

@@ -1,38 +1,12 @@
+@use '../../../variables';
+
+$file-drop-container-height: 24em;
 $file-drop-border-width: 15px;
-$intro-item-padding: 5em;
-
-.home-inner-container {
-  margin: 0 10em;
-}
-
-.home-nav {
-  max-height: 10em;
-  justify-content: space-between;
-
-  & .left {
-    max-height: 100%;
-    display: flex;
-
-    img {
-      margin: 1em 0;
-      object-fit: contain;
-    }
-  }
-
-  & .right {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    & > a {
-      margin-right: 2em;
-    }
-  }
-}
+$intro-item-padding: 3em;
 
 .home-content {
+  padding-top: 8em;
   flex-grow: 1;
-  padding-bottom: 10em;
 }
 
 .intro-container {
@@ -48,10 +22,16 @@ $intro-item-padding: 5em;
       font-weight: 600;
       line-height: 1.6rem;
     }
+
+    & h1 {
+      white-space: nowrap;
+    }
   }
 
   & .right {
     padding: 0 $intro-item-padding;
+    min-height: $file-drop-container-height;
+    max-height: $file-drop-container-height;
   }
 }
 
@@ -123,3 +103,10 @@ $intro-item-padding: 5em;
     }
   }
 }
+
+@media only screen and (max-width: 1600px) {
+  .core-container-inner {
+    margin: variables.$nav-height 0 0 0;
+  }
+}
+

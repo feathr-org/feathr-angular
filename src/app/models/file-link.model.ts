@@ -1,4 +1,4 @@
 export class FileLink {
-  id?: string;
-  ipfsUri?: string;
+  ID?: string;
+  IPFSUri?: string;
 }

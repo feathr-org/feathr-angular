@@ -17,7 +17,7 @@ export class OrbitDBService {
     this._peerId = await this._localInstance.identity.id;
   }
 
-  async createFile(filename: string) {
+  async createFile(filename: string): Promise<string> {
     const db = await this._localInstance.eventlog(filename);
     const address = await db.id;
     this._files.set(address, db);
@@ -39,5 +39,7 @@ export class OrbitDBService {
     if (db) {
       this._files.set(address, db);
     }
+
+    return db;
   }
 }
